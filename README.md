@@ -4,9 +4,7 @@ A djb2 hash list of a list of standart words, from Forth Standart Annex H.
 
 # Rationale
 
-_"AI uses hash code as word, Humans uses semantics as word". "_ Liang Ng [2]
-
-[Omni*Web: the Secret Codes to Break Technofeudalism -- Liang Ng, 16:35](https://www.youtube.com/watch?v=sSlM3Mr_9sI)
+_"AI uses hash code as word, Humans uses semantics as word". "_ Liang Ng [^1]
 
 Chuck Moore once used size and first three characters of words, four bytes as entries in Forth dictionary. 
 
@@ -24,7 +22,7 @@ The compilation stage do hash over 32-bit and reserve some high bits for flags.
 
 ## Hash Algorithm
 
-To transform names into hashes, the hashing algorithm doesn't need to be cryptographically sound, but it must be reliable, and have a public implementation. Therefore, the [DJB2](https://github.com/mkirchner/stutter/blob/main/src/djb2.c) algorithm, revision with OR, is a fast effective choice.
+To transform names into hashes, the hashing algorithm doesn't need to be cryptographically sound, but it must be reliable, and have a public implementation. Therefore, the DJB2 [^2] algorithm, modified with OR and no control ASCII, is a fast effective choice.
 
 ## Application
 
@@ -34,5 +32,6 @@ Over the 435 words, just one collision detected, **D<** and **F~**, and a (my) s
 
 ## References
 
-[^1] 
-[^2] Omni*Web: the Secret Codes to Break Technofeudalism -- Liang Ng, 16\:35: https://www.youtube.com/watch?v=sSlM3Mr_9sI
+[^1] Omni*Web: the Secret Codes to Break Technofeudalism -- Liang Ng, 16\:35: https://www.youtube.com/watch?v=sSlM3Mr_9sI
+[^2] Original djb2, from cdb_hash.c at package : https://cr.yp.to/cdb/cdb-0.75.tar.gz  https://cr.yp.to/cdb/install.html
+[^3] DJB2 public implementation : https://github.com/mkirchner/stutter/blob/main/src/djb2.c
