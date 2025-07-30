@@ -28,7 +28,9 @@ To transform names into hashes, the hashing algorithm doesn't need to be cryptog
 
 The list of all standart forth words [^4] (annexh.txt), with some edition lists  (annexh.list), using a script (doit.sh), the djb2 hash value for each word was calculated (annexh.hash), then was sorted (anneh.sorted) and verified for duplicate hash values (annexh.uniq).
 
-Over the 435 words, just one collision was detected, **D<** and **F~**. A (my) solution is propose change **F~** to **F~=**, also does better clarification that its not a bitwise one-complement but a approximation value. I did.
+Over the 435 words, just one collision was detected, **D<** and **F~**. 
+
+A (my) solution is propose change **F~** to **F~=**, also does better clarification that its not a bitwise one-complement but a approximation value. I did.
 
 ## References
 
