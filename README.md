@@ -22,7 +22,7 @@ The compilation stage do hash over 32-bit and reserve some high bits for flags.
 
 ## Hash Algorithm
 
-To transform names into hashes, the hashing algorithm doesn't need to be cryptographically sound, but it must be reliable, and have a public implementation. Therefore, the DJB2 algorithm (with OR) is a fast effective choice.
+To transform names into hashes, the hashing algorithm doesn't need to be cryptographically sound, but it must be reliable, and have a public implementation. Therefore, the [DJB2](https://theartincode.stanis.me/008-djb2/) algorithm (with OR) is a fast effective choice.
 
 ## Application
 
