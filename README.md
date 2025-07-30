@@ -6,7 +6,7 @@ A djb2 hash list of a list of standart words, from Forth Standart Annex H.
 
 _"AI uses hash code as word, Humans uses semantics as word". "_ Liang Ng [^1]
 
-Chuck Moore once used size and first three characters of words, four bytes as entries in Forth dictionary [^2]
+Chuck Moore once used size and first three characters of words, four bytes as entries in Forth dictionary and made a letter about [^2]
 
 Now with 32-bit CPUs, everthing must be four bytes aligned. A Forth dictionary waste many bytes in pads. 
 
@@ -22,17 +22,17 @@ The compilation stage do hash over 32-bit and reserve some high bits for flags.
 
 ## Hash Algorithm
 
-To transform names into hashes, the hashing algorithm doesn't need to be cryptographically sound, but it must be reliable, and have a public implementation. Therefore, the DJB2 [^2] algorithm, modified with OR and no control ASCII, is a fast effective choice.
+To transform names into hashes, the hashing algorithm doesn't need to be cryptographically sound, but it must be reliable, and have a public implementation. Therefore, the DJB2 [^3] algorithm, modified with OR and no control ASCII, is a fast effective choice.
 
 ## Application
 
-The [Forth standart AnnexH](https://forth-standard.org/standard/alpha) (annexh.txt), with some edition lists all standart forth words (annexh.list), using a script (doit.sh), the djb2 hash value for each word was calculated (annexh.hash), then was sorted (anneh.sorted) and verified for duplicate hash values (annexh.uniq).
+The list of all standart forth words [^4] (annexh.txt), with some edition lists  (annexh.list), using a script (doit.sh), the djb2 hash value for each word was calculated (annexh.hash), then was sorted (anneh.sorted) and verified for duplicate hash values (annexh.uniq).
 
-Over the 435 words, just one collision detected, **D<** and **F~**, and a (my) solution is propose change **F~** to **F~=**. Also does better clarification that its not a bitwise one-complement but a approximation value. I did.
+Over the 435 words, just one collision was detected, **D<** and **F~**. A (my) solution is propose change **F~** to **F~=**, also does better clarification that its not a bitwise one-complement but a approximation value. I did.
 
 ## References
 
-[^1] Omni*Web: the Secret Codes to Break Technofeudalism -- Liang Ng, 16\:35: https://www.youtube.com/watch?v=sSlM3Mr_9sI
-[^2] "Letter to the Editor", page 20: https://raw.githubusercontent.com/larsbrinkhoff/forth-documents/master/Evolution.pdf
-[^2] Original djb2, from cdb_hash.c at package : https://cr.yp.to/cdb/cdb-0.75.tar.gz  https://cr.yp.to/cdb/install.html
-[^3] DJB2 public implementation : https://github.com/mkirchner/stutter/blob/main/src/djb2.c
+[^1]: Omni*Web: the Secret Codes to Break Technofeudalism -- Liang Ng, 16\:35 : https://www.youtube.com/watch?v=sSlM3Mr_9sI
+[^2]: "Letter to the Editor", page 20: https://raw.githubusercontent.com/larsbrinkhoff/forth-documents/master/Evolution.pdf
+[^3]: Original djb2, from cdb_hash.c at package : https://cr.yp.to/cdb/cdb-0.75.tar.gz  https://cr.yp.to/cdb/install.html
+[^4]: Forth Standart, AnnexH : https://forth-standard.org/standard/alpha
