@@ -24,13 +24,17 @@ The compilation stage do hash over 32-bit and reserve some high bits for flags.
 
 To transform names into hashes, the hashing algorithm doesn't need to be cryptographically sound, but it must be reliable, and have a public implementation. Therefore, the DJB2 [^3] algorithm, modified with OR and no control ASCII, is a fast effective choice.
 
-## Application
+## Verification
 
 The list of all standart forth words [^4] (annexh.txt), with some edition lists  (annexh.list), using a script (doit.sh), the djb2 hash value for each word was calculated (annexh.hash), then was sorted (anneh.sorted) and verified for duplicate hash values (annexh.uniq).
 
 Over the 435 words, just one collision was detected, **D<** and **F~**. 
 
-A (my) solution is propose change **F~** to **F~=**, also does better clarification that its not a bitwise one-complement but a approximation value. I did.
+A (my) solution is propose change F~ to F~=, also does better clarification that it's not a bitwise one's-complement but a approximation value. I did.
+
+## Application
+
+The use of djb2 hash is used in milliforth for Riscv [^5]. 
 
 ## References
 
@@ -38,3 +42,5 @@ A (my) solution is propose change **F~** to **F~=**, also does better clarificat
 [^2]: "Letter to the Editor", page 20: https://raw.githubusercontent.com/larsbrinkhoff/forth-documents/master/Evolution.pdf
 [^3]: Original djb2, from cdb_hash.c at package : https://cr.yp.to/cdb/cdb-0.75.tar.gz  https://cr.yp.to/cdb/install.html
 [^4]: Forth Standart, AnnexH : https://forth-standard.org/standard/alpha
+[^5]: A milliforth for RiscV : https://github.com/agsb/milliForth-RiscV
+
