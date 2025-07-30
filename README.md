@@ -12,7 +12,7 @@ Now with 32-bit CPUs, everthing must be four bytes aligned. A Forth dictionary w
 
 By use a 32-byte hash instead of strings, find of a word, and code, could be done just one comparation of hashes.
 
-The header changes to: link, hash. Also could have a pointer to the string of words elsewhere.
+The header changes to: link, hash. Also could have a pointer to the original string elsewhere.
 
 ## Collisions
 
@@ -22,7 +22,7 @@ The compilation stage do hash over 32-bit and reserve some high bits for flags.
 
 ## Hash Algorithm
 
-To transform names into hashes, the hashing algorithm doesn't need to be cryptographically sound, but it must be fast, reliable, and have a public implementation. Therefore, the DJB2 algorithm (with OR) is an effective choice.
+To transform names into hashes, the hashing algorithm doesn't need to be cryptographically sound, but it must be reliable, and have a public implementation. Therefore, the DJB2 algorithm (with OR) is a fast effective choice.
 
 ## Application
 
