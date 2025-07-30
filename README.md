@@ -6,7 +6,7 @@ A djb2 hash list of a list of standart words, from Forth Standart Annex H.
 
 _"AI uses hash code as word, Humans uses semantics as word". "_ Liang Ng [^1]
 
-Chuck Moore once used size and first three characters of words, four bytes as entries in Forth dictionary. 
+Chuck Moore once used size and first three characters of words, four bytes as entries in Forth dictionary [^2]
 
 Now with 32-bit CPUs, everthing must be four bytes aligned. A Forth dictionary waste many bytes in pads. 
 
@@ -33,5 +33,6 @@ Over the 435 words, just one collision detected, **D<** and **F~**, and a (my) s
 ## References
 
 [^1] Omni*Web: the Secret Codes to Break Technofeudalism -- Liang Ng, 16\:35: https://www.youtube.com/watch?v=sSlM3Mr_9sI
+[^2] "Letter to the Editor", page 20: https://raw.githubusercontent.com/larsbrinkhoff/forth-documents/master/Evolution.pdf
 [^2] Original djb2, from cdb_hash.c at package : https://cr.yp.to/cdb/cdb-0.75.tar.gz  https://cr.yp.to/cdb/install.html
 [^3] DJB2 public implementation : https://github.com/mkirchner/stutter/blob/main/src/djb2.c
