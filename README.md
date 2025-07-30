@@ -4,7 +4,7 @@ A djb2 hash list of a list of standart words, from Forth Standart Annex H.
 
 # Rationale
 
-_"AI uses hash code as word, Humans uses semantics as word". "_[Liang Ng](https://www.youtube.com/watch?v=sSlM3Mr_9sI)
+_"AI uses hash code as word, Humans uses semantics as word". "_[Liang Ng, 16:35](https://www.youtube.com/watch?v=sSlM3Mr_9sI)
 
 Chuck Moore once used size and first three characters of words, four bytes as entries in Forth dictionary. 
 
