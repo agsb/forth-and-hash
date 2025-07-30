@@ -26,9 +26,9 @@ To transform names into hashes, the hashing algorithm doesn't need to be cryptog
 
 ## Application
 
-The [Forth standart AnnexH](https://forth-standard.org/standard/alpha), lists all standart forth words, and using ...
+The [Forth standart AnnexH](https://forth-standard.org/standard/alpha) (annexh.txt), with some edition lists all standart forth words (annexh.list), using a script (doit.sh), the djb2 hash value for each word was calculated (annexh.hash), then was sorted (anneh.sorted) and verified for duplicate hash values (annexh.uniq).
 
-Just one collision detected, **D<** and **F~**, and a solution is change **F~ to **F~=**, also to better clarification that its not a bitwise one-complement but a approximation value.
+Over the 435 words, just one collision detected, **D<** and **F~**, and a (my) solution is propose change **F~** to **F~=**. Also does better clarification that its not a bitwise one-complement but a approximation value. I did.
 
 ## References
 
