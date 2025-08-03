@@ -8,9 +8,11 @@ _"AI uses hash code as word, Humans uses semantics as word". "_ Liang Ng [^1]
 
 Chuck Moore once used size and first three characters of words, four bytes as entries in Forth dictionary and made a letter about [^2]
 
+Annex H of the Forth Standard lists 435 words, totaling about 2,719 characters. The average length of a forth word is 6.25
+
 Now with 32-bit CPUs, everthing must be four bytes aligned. A Forth dictionary waste many bytes in pads. 
 
-By use a 32-byte hash instead of strings, find of a word, and code, could be done just one comparation of hashes.
+By use a 32-byte hash instead of strings, find of a word in dictionarye, could be done just one comparation of hashes.
 
 The header changes to: link, hash. Also could have a pointer to the original string elsewhere.
 
@@ -31,6 +33,8 @@ The list of all standart forth words [^4] (annexh.txt), with some edition lists 
 Over the 435 words, just one collision was detected, **D<** and **F~**. 
 
 A (my) solution is propose change F~ to F~=, also does better clarification that it's not a bitwise one's-complement but a approximation value. I did.
+
+Only FLAG_IMMEDIATE, as 0x80000000, for flag immediate words are used to mask the hash.
 
 ## Application
 

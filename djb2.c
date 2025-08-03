@@ -33,6 +33,10 @@ char word[MAXLINE + 1];
 
 unsigned int hash;
 
+unsigned int hasf;
+
+unsigned int hasg;
+
 void djb2 ( char * string ) {
 
         int c;
@@ -57,7 +61,9 @@ int main ( int argc, char * argv[]) {
                 
                 djb2 (word);
 
-                printf ("%08X : %s", hash, word);
+                hasf = hash & (0x80000000 - 1);
+
+                printf ("%08X : %s", hasf, word);
 
                 }
 
