@@ -63,7 +63,7 @@ int main ( int argc, char * argv[]) {
 
                 hasf = hash & (0x80000000 - 1);
 
-                printf ("%08X : %s", hasf, word);
+                printf ("%08X : %08X : %s", hasf, hash, word);
 
                 }
 
