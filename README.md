@@ -30,9 +30,9 @@ To transform names into hashes, the hashing algorithm doesn't need to be cryptog
 
 The list of all standart forth words [^4] (annexh.txt), with some edition lists (annexh.list), using a script (doit.sh), the djb2 hash value for each word was calculated (annexh.hash), then was sorted (annexh.sorted) and verified for duplicate hash values (annexh.uniq).
 
-Over the 435 words, just one collision was detected, **D<** and **F~**. 
+Over the 435 words from annex H, just one collision of hash-32 bits, was detected, **D<** and **F~**, and for hash-16 bits, three collisions **FOVER and SFLOAT+** , **EVALUATE and FASINH** and **D< and F~** .
 
-A (my) solution is propose change F~ to F~=, also does better clarification that it's not a bitwise one's-complement but a approximation value. I did.
+A (my) solution is propose change F~ to F~=, also does better clarification that it's not a bitwise one's-complement but a approximation value. I did. Also arbitrary change FOVER to FOVER=, and FASINH to FASINH= .
 
 Only FLAG_IMMEDIATE, as 0x80000000, for flag immediate words are used later to mask the hash.
 
