@@ -8,7 +8,7 @@ _"AI uses hash code as word, Humans uses semantics as word". "_ Liang Ng [^1]
 
 Chuck Moore once used size and first three characters of words, four bytes as entries in Forth dictionary and made a letter about [^2]
 
-Annex H of the Forth Standard lists 435 words, totaling about 2,719 characters. The average length of a Forth word is 6.25;
+Annex H of the Forth Standard lists 435 words, totaling about 2,719 characters. The average length of a Forth word is about 6 letters;
 
 Now with 32-bit CPUs, everthing must be four bytes aligned. A Forth dictionary waste many bytes in pads. 
 
