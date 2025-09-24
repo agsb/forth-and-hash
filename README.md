@@ -2,6 +2,8 @@
 
 A djb2 hash list of a list of standart words, from Forth Standart Annex H.
 
+Why not use hash values instead flag-size+name-pad ?
+
 # Rationale
 
 _"AI uses hash code as word, Humans uses semantics as word". "_ Liang Ng [^1]
