@@ -57,13 +57,21 @@ void djb2 ( char * string ) {
 
 int main ( int argc, char * argv[]) {
 
+        int n;
+
         while ( fgets (word, MAXLINE, stdin) ) {
-                
+
+                n = 0;
+
+                while (word[n] != '\n' && word[n] != '\r' ) n++;
+
+                word[n] = 0;
+
                 djb2 (word);
 
                 hasf = hash & (0x80000000 - 1);
 
-                printf ("%08X : %08X : %s", hasf, hash, word);
+                printf (".equ hash_%s, 0x%08X\n", word, hasf);
 
                 }
 

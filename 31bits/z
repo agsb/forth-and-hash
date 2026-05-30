@@ -1,0 +1,12 @@
+.equ hash_<<, 	0x00596885
+.equ hash_>>, 	0x005968C5
+.equ hash_*, 	0x0002B58F
+.equ hash_/, 	0x0002B58A
+.equ hash_2/, 	0x00596858
+.equ hash_2*, 	0x0059685D
+.equ hash_M*, 	0x005972C2
+.equ hash_UM*, 	0x0B87EB77
+.equ hash_/MOD, 	0x7C4D1C6C
+.equ hash_FM/MOD, 	0x14CB69A7
+.equ hash_SM/MOD, 	0x49BE2C12
+.equ hash_, 	0x00001505
